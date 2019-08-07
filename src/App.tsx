@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { HeaderComponent } from "components/header/header.component";
+import { NotFoundContainer } from "pages/not-found/not-found.container";
+import { HomeContainer } from "pages/home/home.container";
+import { SuggestionsContainer } from "pages/suggestions/suggestions.container";
+import { EpisodesContainer } from "pages/episodes/episodes.container";
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Main State
+export interface AppState {
+  filterQuery: string;
 }
+type ContextType = [AppState, React.Dispatch<React.SetStateAction<AppState>>];
 
-export default App;
+const initialState = {
+  filterQuery: ""
+};
+
+// Main Context
+export const AppContext = React.createContext<ContextType>([
+  initialState,
+  () => {}
+]);
+
+const Provider: React.FC = props => {
+  const [state, setState] = useState<AppState>(initialState);
+  return (
+    <AppContext.Provider value={[state, setState]}>
+      {props.children}
+    </AppContext.Provider>
+  );
+};
+
+// Main Component
+export const App = () => {
+  return (
+    <Router>
+      <Provider>
+        <HeaderComponent />
+        <Switch>
+          <Route path="/" exact component={HomeContainer} />
+          <Route path="/suggestions/" component={SuggestionsContainer} />
+          <Route path="/episodes/" component={EpisodesContainer} />
+          <Route component={NotFoundContainer} />
+        </Switch>
+      </Provider>
+    </Router>
+  );
+};

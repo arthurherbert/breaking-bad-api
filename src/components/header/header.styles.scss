@@ -1,0 +1,48 @@
+.bb-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+
+  &__logo > img {
+    width: 200px;
+  }
+
+  &__menu {
+    display: flex;
+  }
+
+  &__menu-item {
+    padding: 0 12px;
+    cursor: pointer;
+
+    & > a {
+      text-decoration: none;
+      color: #5d5d5d;
+    }
+
+    &--is-active,
+    &:hover {
+      & > a {
+        color: #ffffff;
+      }
+    }
+  }
+
+  &__search-input {
+    input {
+      height: 40px;
+      width: 300px;
+      background-color: #0c0b0b;
+      border: none;
+      border-bottom: 1px solid #bdbdbd;
+      outline: none;
+      color: #bdbdbd;
+      padding-right: 24px;
+    }
+
+    svg {
+      margin-left: -18px;
+    }
+  }
+}
