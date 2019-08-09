@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { HeaderComponent } from "components/header/header.component";
 import { NotFoundContainer } from "pages/not-found/not-found.container";
 import { HomeContainer } from "pages/home/home.container";

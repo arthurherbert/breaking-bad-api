@@ -1,0 +1,130 @@
+@import "index.scss";
+
+.home {
+  display: flex;
+  color: $text-color;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  & > p {
+    font-size: 24px;
+  }
+
+  &__filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > p {
+      font-size: 12px;
+      margin-right: 12px;
+    }
+  }
+
+  &__characters {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+}
+
+.tag {
+  cursor: pointer;
+  width: 60px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  margin: 0 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.5s ease all;
+
+  &:hover,
+  &.is-active {
+    color: #ffffff;
+    border-color: $text-color;
+    background-color: $text-color;
+  }
+
+  &--type-alive {
+    color: #0cbd1c;
+    border-color: #0cbd1c;
+    &:hover,
+    &.is-active {
+      border-color: #0cbd1c;
+      background-color: #0cbd1c;
+    }
+  }
+
+  &--type-dead {
+    color: #f85555;
+    border-color: #f85555;
+    &:hover,
+    &.is-active {
+      border-color: #f85555;
+      background-color: #f85555;
+    }
+  }
+}
+
+.character {
+  max-width: 300px;
+  height: 400px;
+  flex: 1 0 25%;
+  flex-shrink: 0;
+  background-size: cover;
+  position: relative;
+  margin: 12px;
+
+  .tag {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    margin: 0;
+    cursor: default;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background: linear-gradient(
+      0deg,
+      black 0%,
+      rgba(0, 0, 0, 0.82) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    padding: 30px 12px 6px;
+    justify-content: flex-end;
+    width: calc(100% - 24px);
+  }
+
+  &__name {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  &__birthday {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 8px;
+
+    svg {
+      color: #fff;
+      margin-right: 4px;
+    }
+  }
+
+  &__occupation {
+    font-size: 12px;
+  }
+}

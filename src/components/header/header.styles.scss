@@ -1,11 +1,13 @@
-.bb-header {
+@import "index.scss";
+
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
 
   &__logo > img {
-    width: 200px;
+    width: 160px;
   }
 
   &__menu {
@@ -18,13 +20,17 @@
 
     & > a {
       text-decoration: none;
-      color: #5d5d5d;
+      color: $text-color;
+      font-size: 18px;
     }
 
     &--is-active,
     &:hover {
       & > a {
-        color: #ffffff;
+        color: $primary-color;
+        border-bottom: 2px solid $primary-color;
+        padding-bottom: 2px;
+        font-weight: 500;
       }
     }
   }
@@ -32,13 +38,14 @@
   &__search-input {
     input {
       height: 40px;
+      background-color: transparent;
       width: 300px;
-      background-color: #0c0b0b;
       border: none;
-      border-bottom: 1px solid #bdbdbd;
+      border-bottom: 1px solid $text-color;
       outline: none;
-      color: #bdbdbd;
+      color: $text-color;
       padding-right: 24px;
+      font-size: 18px;
     }
 
     svg {

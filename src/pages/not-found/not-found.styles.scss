@@ -1,16 +1,15 @@
-.bb-not-found {
+.not-found {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 48px;
-  color: #ffffff;
   margin-top: 15%;
 
   &:before {
     content: "404";
     margin-top: -15px;
     font-size: 250px;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(47, 48, 49, 0.3);
     position: absolute;
   }
 }

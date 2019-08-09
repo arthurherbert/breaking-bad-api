@@ -1,8 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap");
 
+$primary-color: #198746;
+$text-color: #2f3031;
+$background-color: #f5f8fc;
+
 body {
   margin: 0;
   padding: 20px;
-  background-color: #0c0b0b;
+  background-color: $background-color;
+  color: $text-color;
   font-family: "Rubik", sans-serif;
+}
+
+.l-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 0 20px 0 12px;
+  font-size: 24px;
+  font-weight: 500;
 }

@@ -23,11 +23,11 @@ export const HeaderComponent = () => {
   const renderMenu = () => {
     const handleRouteClick = (route: string) => setActiveRouter(route);
     const menuClass = (route: string) =>
-      classnames("bb-header__menu-item", {
-        "bb-header__menu-item--is-active": activeRoute === route
+      classnames("header__menu-item", {
+        "header__menu-item--is-active": activeRoute === route
       });
     return (
-      <div className="bb-header__menu">
+      <div className="header__menu">
         <div className={menuClass("/")}>
           <Link onClick={() => handleRouteClick("/")} to="/">
             Personagens
@@ -51,13 +51,13 @@ export const HeaderComponent = () => {
   };
 
   const renderLogo = () => (
-    <div className="bb-header__logo">
+    <div className="header__logo">
       <img src={logo} alt="Logo Breaking Bad" />
     </div>
   );
 
   const renderInput = () => (
-    <div className="bb-header__search-input">
+    <div className="header__search-input">
       <input
         placeholder="Pesquise os personagens"
         onChange={handleFilterChange}
@@ -67,7 +67,7 @@ export const HeaderComponent = () => {
   );
 
   return (
-    <div className="bb-header">
+    <div className="header">
       {renderLogo()}
       {renderMenu()}
       {renderInput()}
